@@ -20,35 +20,35 @@ provider:
   stage: ${self:custom.config.environment}
 
 # Resources
-resources:
-  Resources:
-      WebsiteSyncBucket:
-        Type: AWS::S3::Bucket
-        Properties:
-          BucketName: ${self:custom.config.website_bucket_name}
-          AccessControl: Private
-          WebsiteConfiguration:
-            IndexDocument: index.html
-            ErrorDocument: error.html
-      WebsiteSyncBucketPolicy:
-        Type: AWS::S3::BucketPolicy
-        DependsOn: WebsiteSyncBucket
-        Properties:
-          Bucket: 
-            Ref: WebsiteSyncBucket
-          PolicyDocument:
-            Version: '2012-10-17'
-            Statement:
-            - Sid: Allow Public Access to All Objects
-              Effect: Allow
-              Principal: '*'
-              Action:
-                - s3:GetObject
-              Resource: arn:aws:s3:::${self:custom.config.website_bucket_name}/*
+# resources:
+#   Resources:
+#       WebsiteSyncBucket:
+#         Type: AWS::S3::Bucket
+#         Properties:
+#           BucketName: ${self:custom.config.website_bucket_name}
+#           AccessControl: Private
+#           WebsiteConfiguration:
+#             IndexDocument: index.html
+#             ErrorDocument: error.html
+#       WebsiteSyncBucketPolicy:
+#         Type: AWS::S3::BucketPolicy
+#         DependsOn: WebsiteSyncBucket
+#         Properties:
+#           Bucket: 
+#             Ref: WebsiteSyncBucket
+#           PolicyDocument:
+#             Version: '2012-10-17'
+#             Statement:
+#             - Sid: Allow Public Access to All Objects
+#               Effect: Allow
+#               Principal: '*'
+#               Action:
+#                 - s3:GetObject
+#               Resource: arn:aws:s3:::${self:custom.config.website_bucket_name}/*
 
 
-  # Print out the name of the bucket that is created
-  Outputs:
-    WebsiteSyncBucket:
-      Value:
-        Ref: WebsiteSyncBucket
+#   # Print out the name of the bucket that is created
+#   Outputs:
+#     WebsiteSyncBucket:
+#       Value:
+#         Ref: WebsiteSyncBucket
