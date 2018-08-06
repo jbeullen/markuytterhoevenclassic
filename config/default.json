@@ -1,0 +1,7 @@
+{
+    "service_name": "markuytterhoevenclassic",
+    "region": "eu-central-1",
+    "environment": "prod",
+    "website_bucket_name": "markuytterhoevenclassic.be",
+    "local_sync_folder": "site"
+}

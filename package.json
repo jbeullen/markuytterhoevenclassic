@@ -1,0 +1,9 @@
+{
+  "name": "markuytterhoevenclassic",
+  "description": "",
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless-s3bucket-sync": "^0.1.5"
+  }
+}
