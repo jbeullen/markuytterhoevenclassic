@@ -1,5 +1,7 @@
 # Serverless setup for markuytterhoevenclassic.be
 
+[![Build Status](https://travis-ci.org/jbeullen/markuytterhoevenclassic.svg?branch=master)](https://travis-ci.org/jbeullen/markuytterhoevenclassic)
+
 ## Create Stack
 ````
 sls deploy
