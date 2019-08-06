@@ -99,7 +99,28 @@ $(function () {
       parkingInfowindow3.open(map, parkingMarker3);
     });
 
+    var bridgeMarkerImage = 'img/forbidden.png';
+    var bridgeLocation = new google.maps.LatLng(51.020955, 4.471932);
+    var bridgeMarker = new google.maps.Marker({
+      position: bridgeLocation,
+      map: map,
+      icon: bridgeMarkerImage
+    });
 
+    var bridgeContentString = '<div class="info-window">' +
+        '<div class="info-content">' +
+        '<p>Plaisancebrug: <b>afgesloten,</b><br/><b>geen doorgang voor wagens</b></p>' +
+        '</div>' +
+        '</div>';
+
+    var bridgeInfoWindow = new google.maps.InfoWindow({
+      content: bridgeContentString,
+      maxWidth: 400
+    });
+
+    bridgeMarker.addListener('click', function () {
+      bridgeInfoWindow.open(map, bridgeMarker);
+    });
 
   }
 
